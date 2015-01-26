@@ -1,0 +1,28 @@
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+    <?php
+            foreach ($history as $row)
+            {
+                echo("<tr>");
+                echo("<td>" . date('d/m/y, g:i A',strtotime($row["date"])) . "</td>");
+                echo("<tr>" . $row["transaction"] . "</td>");
+                echo("<td>" . $row["symbol"] . "</td>");
+                echo("<td>" . $row["shares"] . "</td>");
+                echo("<td>$" . number_format($row["price"], 2) . "</td>");
+                echo("</tr>");
+            
+            }
+      ?> 
+      </tbody> 
+ </table>         
